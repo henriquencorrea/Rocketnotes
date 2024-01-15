@@ -13,7 +13,7 @@ class UserCreateService {
     const checkUserExist = await this.userRepository.findByEmail(email);
 
     if(checkUserExist){
-      throw new AppError("Este e-mail ja esta em uso.");
+      throw new AppError("Este e-mail ja está em uso.");
     }
 
     const hashedPassword = await hash(password, 8);
